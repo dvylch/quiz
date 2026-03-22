@@ -1,0 +1,180 @@
+.results-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--background) 0%, var(--surface) 100%);
+}
+
+.results-card {
+  background-color: var(--surface);
+  border-radius: 20px;
+  padding: 3rem;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: scaleIn 0.5s ease;
+  text-align: center;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.emoji {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  display: block;
+  animation: bounce 0.6s ease;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.results-card h1 {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+  color: var(--text);
+}
+
+.results-card h2 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+.score-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  padding: 2rem;
+  background-color: var(--background);
+  border-radius: 16px;
+}
+
+.score-circle {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.score-number {
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  line-height: 1;
+}
+
+.score-percent {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  margin-left: 0.3rem;
+}
+
+.score-details {
+  text-align: left;
+}
+
+.score-text {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--text);
+  margin: 0;
+}
+
+.score-correct {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin: 0.3rem 0 0 0;
+}
+
+.feedback-message {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin: 2rem 0;
+  line-height: 1.6;
+}
+
+.results-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-retry {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.btn-retry:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
+}
+
+.btn-home {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  background-color: var(--text-secondary);
+  color: var(--background);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.btn-home:hover {
+  background-color: var(--text);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .results-card {
+    padding: 2rem;
+  }
+
+  .results-card h1 {
+    font-size: 2rem;
+  }
+
+  .score-display {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .results-buttons {
+    flex-direction: column;
+  }
+
+  .btn-retry,
+  .btn-home {
+    width: 100%;
+  }
+}
+
